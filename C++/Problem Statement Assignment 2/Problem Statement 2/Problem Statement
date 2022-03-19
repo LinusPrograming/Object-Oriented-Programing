@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class student
+{
+    public:
+
+        int iRollNumber;
+        int PhoneNumber;
+
+        student(string StudName)
+        {
+            
+            cout<<StudName<<" Enter Your Details !!!";
+            cout<<"\n\nName :-"<<StudName;
+            cout<<"\n\nRoll Number :";
+            cin>>iRollNumber;
+            cout<<"\nPhone Number :";
+            cin>>PhoneNumber;
+            cout<<"\n\n\n";
+        }
+};
+int main()
+{
+    student Obj("Flora");
+
+    student Obj1("Scout");
+
+    return 0 ;
+}
