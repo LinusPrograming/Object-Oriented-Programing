@@ -1,0 +1,55 @@
+
+//1. Create a class with public, private, and protected data members and functions
+//members. Create an object of this class and see what kind of compiler messages
+//you get when you try to access all the class members
+
+#include <iostream>
+
+using namespace std;
+
+class Messages
+{
+private:
+
+    int iprivate;
+
+    void Fun()
+    {
+        cout<<"Fun";
+    }
+
+public:
+
+    int ipublic;
+
+     void Gun()
+    {
+        cout<<"Gun";
+    }
+
+protected:
+
+    int iprotected;
+
+     void Run()
+    {
+        cout<<"Run";
+    }
+
+};
+
+int main()
+{
+    Messages Obj;
+//
+//    Obj.iprivate;
+//    Obj. Fun();
+
+    Obj.ipublic;
+    Obj. Gun();
+
+    Obj.iprotected;
+    Obj.Run();
+
+    return 0;
+}
