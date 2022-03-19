@@ -1,0 +1,55 @@
+
+//4. Create a class named 'PrintNumber' to print various numbers of different
+//datatypes by creating different functions with the same name 'printn'
+//having a parameter for each datatype.
+
+#include <iostream>
+
+using namespace std;
+
+class PrintNumber
+{
+    public:
+
+        int printn(int ivalue)
+        {
+              cout<<"\n\n\t\tEntered int value is : ";
+              cout<<ivalue;
+        }
+        float printn(float ivalue)
+        {
+              cout<<"\n\n\t\tEntered float value is : ";
+              cout<<ivalue;
+        }
+        char printn(char ivalue)
+        {
+              cout<<"\n\n\t\tEntered character value is : ";
+              cout<<ivalue;
+        }
+
+
+};
+
+
+int main()
+{
+    PrintNumber Obj1;
+    int inum=0;
+    float fnum=0.0;
+    char cnum='\0';
+
+    cout<<"\n\n\t\tEnter int value : ";
+    cin>>inum;
+
+    cout<<"\n\n\t\tEnter float value : ";
+    cin>>fnum;
+
+    cout<<"\n\n\t\tEnter character : ";
+    cin>>cnum;
+
+    Obj1.printn(inum);
+    Obj1.printn(fnum);
+    Obj1.printn(cnum);
+
+    return 0;
+}
