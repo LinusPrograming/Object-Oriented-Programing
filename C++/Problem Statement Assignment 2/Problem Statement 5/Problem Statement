@@ -1,0 +1,46 @@
+
+/* Write a program to print the area of two rectangles having sides (4,5) and
+(5,8)respectively by creating a class named 'Rectangle' with a function
+named 'Area' which returns the area. Length and breadth are passed as
+parameters to its constructor.*/
+
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+    public:
+
+        int length;
+        int breadth;
+
+        Rectangle(int ivalue1,int ivalue2)
+        {
+            length=ivalue1;
+            breadth=ivalue2;
+        }
+
+        int Area()
+        {
+          //  int iArea=0;
+
+         //   iArea=length*breadth;
+
+            return length*breadth;;
+        }
+
+};
+int main()
+{
+    Rectangle Obj1(4,5);
+
+    Rectangle Obj2(5,8);
+
+    cout<<"Area of (4,5) :"<<Obj1.Area();
+
+    cout<<"\n\nArea of(5,8) :"<<Obj2.Area()<<endl;
+
+
+    return 0;
+}
