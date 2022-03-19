@@ -1,0 +1,62 @@
+
+//4. Write a program that would print the information (name, year of joining,
+//salary, address) of three employees by creating a class named 'Employee'.
+//The output should be as follows:
+//Name     Year of joining        Address
+//Roy          1994             64C- Satara
+//Sophie       2000             68D- Satara
+//Flora        1999             26B- Satara
+
+
+#include <iostream>
+
+using namespace std;
+
+class Employee
+{
+public:
+
+    char name[10];
+    int year;
+    int phone;
+   //  Employee bsd[3];
+//   Employee obs[3];
+
+    void asd()
+    {
+        int ivalue=0;
+        Employee icount[3];
+
+        for(ivalue=0;ivalue<3;ivalue++)
+        {
+            cout<<"\n\t\t\t\tEnter Details!!!";
+            cout<<"\n\nEnter Details of "<<ivalue+1<<" Employee !!!";
+            cout<<"\n\n\n\t\tName :";
+            cin>>icount[ivalue].name;
+            cout<<"\n\n\t\tYear of Joining :";
+            cin>>icount[ivalue].year;
+            cout<<"\n\n\t\tPhone Number :";
+            cin>>icount[ivalue].phone;
+        }
+
+        cout<<"\n\n\n\n\t\t\t\t!!!Details!!!";
+        cout<<"\n\n\n\n\tName \t\t Year of joining \t\t Phone Number\n";
+
+        for(ivalue=0;ivalue<3;ivalue++)
+        {
+            cout<<"\n\t"<<icount[ivalue].name;;
+            cout<<"\t\t\t"<<icount[ivalue].year;
+            cout<<"\t\t\t\t"<<icount[ivalue].phone;
+
+        }
+    }
+};
+
+int main()
+{
+
+    Employee obj1;
+    obj1.asd();
+
+    return 0;
+}
