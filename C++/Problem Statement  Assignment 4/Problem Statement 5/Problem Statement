@@ -1,0 +1,47 @@
+//5. Create a class with data members and virtual functions. Write a function that looks
+//at the memory in an object of your class and prints out the various pieces of it. To
+//do this you will need to experiment and iteratively discover where the VPTR is
+//located in the object.
+
+#include <iostream>
+
+using namespace std;
+
+class SpaceShip
+{
+    public:
+        int A;
+        int B;
+
+        void virtual Fly()
+        {
+            cout<<"Fly";
+        }
+};
+class Shuttele:public SpaceShip
+{
+    public:
+        int C;
+
+        void Fly()
+        {
+            cout<<"Land";
+            //Land();
+        }
+
+};
+int main()
+{
+    Shuttele Obj;
+
+    SpaceShip Obj2;
+
+    cout<<sizeof(Obj)<<endl;                          //24 (4 (A) + 4 (B) + 4 (C) + 4(Padding) + 8 (VPTR Pointer))
+    
+    cout<<sizeof(Obj2)<<endl;                         //16 (4 (A) + 4 (B) + 8 (VPTR Pointer))
+
+    Obj.Fly();
+    Obj2.Fly();
+
+    return 0;
+}
