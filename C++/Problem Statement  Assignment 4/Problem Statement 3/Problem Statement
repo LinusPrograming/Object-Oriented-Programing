@@ -1,0 +1,45 @@
+
+//3. Use private and protected inheritance to create two new classes from a base class.
+//Then attempt to upcast objects of a derived class to the base class. Explain what
+//happens.
+
+#include <iostream>
+
+using namespace std;
+
+class Base
+{
+   public:
+      int ivalue1;
+      int ivalue2;
+
+};
+
+class iprivate:private Base
+{
+
+};
+
+class iprotected:protected Base
+{
+
+};
+
+int main()
+{
+   Base *bp=NULL;
+
+   iprivate Obj1;
+
+   bp=&Obj1;
+
+   bp->ivalue1;                            // Not Allowed
+
+   iprotected Obj2;
+
+   bp=&Obj2
+
+   bp->ivalue1;                               // Not Allowed
+
+   return 0;
+}
