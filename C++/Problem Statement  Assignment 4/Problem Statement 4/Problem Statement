@@ -1,0 +1,40 @@
+
+//4. Create a class called SpaceShip with a Fly() method. Inherit Shuttle from
+//SpaceShip and add a land() method. Create a new Shuttle, upcast by pointer or
+//reference to a SpaceShip, and try to call the land() method. Explain the results.
+
+#include <iostream>
+
+using namespace std;
+
+class SpaceShip
+{
+    public:
+
+        void Fly()
+        {
+            cout<<"Fly";
+        }
+};
+class Shuttele:public SpaceShip
+{
+    public:
+
+        void Land()
+        {
+            cout<<"Land";
+        }
+
+};
+int main()
+{
+    SpaceShip *bp=NULL;
+
+    bp=new Shuttele;
+
+  //  db->Fly();
+
+    bp->Land();
+
+    return 0;
+}
