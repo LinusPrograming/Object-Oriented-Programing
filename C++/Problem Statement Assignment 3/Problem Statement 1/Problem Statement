@@ -1,0 +1,68 @@
+
+//1. Write a program to print the names of students by creating a Student
+//class. If no name is passed while creating an object of the Student class,
+//then the name should be "Unknown", otherwise the name should be equal
+//to the String value passed while creating the object of the Student class.
+
+#include <iostream>
+
+using namespace std;
+
+class Student
+{
+    public:
+
+        Student()
+        {
+            cout<<"\n\n\t\t\tStudent Name : Unknown!!!\n\n";
+        }
+
+        Student(string name1,string name2 ,string name3,string name4,string name5)
+        {
+            cout<<"\n Student 1 :"<<name1<<endl;
+            cout<<" Student 2 :"<<name2<<endl;
+            cout<<" Student 3 :"<<name3<<endl;
+            cout<<" Student 4 :"<<name4<<endl;
+            cout<<" Student 5 :"<<name5<<endl;
+
+        }
+
+};
+
+int main()
+{
+    int ichoice=0;
+
+    string N1;
+    string N2;
+    string N3;
+    string N4;
+    string N5;
+
+    cout<<"Enter The Name of 5 students :";
+    cin>>N1>>N2>>N3>>N4>>N5;
+
+    retry:
+
+    cout<<"\n\nYou want pass the name of student?(1 for yes and 2 for no):";
+    cin>>ichoice;
+    cout<<endl;
+
+    if(ichoice==1)
+    {
+        Student Obj1(N1,N2,N3,N4,N5);
+        //Student Obj1("Shreyas","Tejas","Ashish","Shreyash","Bhaiyya");
+    }
+    else if(ichoice==2)
+    {
+        Student Obj2;
+    }
+    else
+    {
+        cout<<"\n\nError!!!";
+        cout<<"\n\nRetry!!!";
+
+        goto retry;
+    }
+    return 0;
+}
