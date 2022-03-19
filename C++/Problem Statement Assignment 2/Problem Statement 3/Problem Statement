@@ -1,0 +1,41 @@
+
+/* Print the average of three numbers entered by the user by creating a
+ class named 'Average' having a function to calculate and print the
+ average without creating any object of the Average class. */
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class Average
+{
+public:
+
+    void Calculation(int inum1,int inum2,int inum3)
+    {
+        int sum=0;
+
+        sum=inum1+inum2+inum3;
+
+        sum=sum/3;
+
+        cout<<"Average of numbers are "<<sum;
+    }
+};
+int main()
+{
+    int ivalue1=0;
+    int ivalue2=0;
+    int ivalue3=0;
+
+    Average*p=NULL;
+
+    p=new Average;
+
+    cout<<"Enter 3 numbers for calculate the average :";
+    cin>>ivalue1>>ivalue2>>ivalue3;
+
+    p->Calculation(ivalue1,ivalue2,ivalue3);
+
+    return 0;
+}
