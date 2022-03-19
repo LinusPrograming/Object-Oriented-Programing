@@ -1,0 +1,59 @@
+
+//3. Create a class named 'Programming'. While creating an object of the
+//class, if nothing is passed to it, then the message "I love programming
+//languages" should be printed. If some String is passed to it, then in place
+//of "programming languages" the name of that String variable should be
+//printed.
+//For example, while creating the object if we pass "cpp", then "I love cpp"
+//should be printed.
+
+#include <iostream>
+
+using namespace std;
+
+class Programming
+{
+    public:
+
+        Programming()
+        {
+            cout<<"\n\n\n\t\t\tI love programming languages!!!"<<"\n\n";
+        }
+
+        Programming(string line)
+        {
+            cout<<"\n\n\n\t\t\I Love "<<line<<"\n\n";
+        }
+};
+
+int main()
+{
+     int ivalue=0;
+
+   retry:
+
+   cout<<"\n\n\tDo you want pass the string(1. yes and 2. No):";
+   cin>>ivalue;
+
+   if(ivalue==1)
+   {
+        string iAmt;
+
+        cout<<"\n\n\tEnter the string : ";
+        cin>>iAmt;
+
+        Programming Obj1(iAmt);
+   }
+   else if(ivalue==2)
+   {
+       Programming Obj2;
+   }
+   else
+   {
+        cout<<"\n\n\t\tError!!!";
+        cout<<"\n\n\t\tRetry!!!";
+
+        goto retry;
+   }
+    return 0;
+}
