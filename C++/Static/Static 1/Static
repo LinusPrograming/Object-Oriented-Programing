@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+class Demo
+{
+    public:
+
+        int i;                                                                              //non static Characteristics
+        int j;                                                                             //non static Characteristics
+
+        static int k;                                                                     //static Characteristics
+        static int x;
+        void Fun()                                                                         //non static behaviour
+        {
+
+            cout <<i<<endl<<j<< endl;
+            cout<<k<<endl;
+        }
+
+        static void Gun()                                                                  //static behaviour
+        {
+            //  cout<<this->i<<this->j;                                                  //not Allowed
+            //   cout<<i<<j;                                                            //not allowed
+            cout<<k<<endl<<x<<endl;                                                    //Allowed
+        }
+
+};                                                                                   //End of Class
+
+int Demo::k=101;
+int Demo::x=10;
+
+Demo Obj;                                                                           // Global Object
+
+int main()
+{
+    cout << Obj.i<< endl;                                                            //0
+
+    cout << Obj.j<< endl;                                                            //0
+
+    cout <<Demo::k<< endl;                                                            //101
+
+    cout << Obj.k<< endl;                                                           //Demo::k
+
+    Obj.Fun();                                                                      //Fun(&Obj)
+
+    Demo::Gun();
+
+    Obj.Gun();                                                                     //Demo::Gun()
+
+    return 0;
+}
