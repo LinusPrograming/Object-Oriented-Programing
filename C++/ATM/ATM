@@ -1,0 +1,93 @@
+#include <iostream>
+
+using namespace std;
+
+class AMT
+{
+    int anotherTransaction=0;
+    float balance = 0;
+
+public:
+
+    void transaction()
+    {
+        int choice;
+        cout << "\n\tEnter any option to be served!!!\n" << endl;
+        cout << "\t1. Withdraw" << endl;
+        cout << "\t2. Deposit" << endl;
+        cout << "\t3. Balance\n" << endl;
+        cout << "\t>>";
+        cin >> choice;
+        int amountToWithDraw;
+        int amountToDeposit;
+
+        switch(choice)
+        {
+            case 1:
+                // Withdraw
+                cout << "\n\tPlease enter amount to withdraw: ";
+                cin >> amountToWithDraw;
+                if (amountToWithDraw > balance)
+                {
+                    cout << "\n\tThere is no insufficient funds in your account" << endl;
+                    cout << "\n\tDo you want another transaction?\n\n\tPress 1 to proceed and 2 to exit" << endl;
+                    cout << ">>";
+                    cin >> anotherTransaction;
+                    if (anotherTransaction == 1)
+                    {
+                        transaction();
+                    }
+                }
+                else
+                {
+                    balance -= amountToWithDraw;
+                    cout << "\n\tYou have withdrawn " << amountToWithDraw << ".00 and you balance is " << balance << ".00" << endl;
+                    cout << "\n\tDo you want another transaction?\n\n\tPress 1 to proceed and 2 to exit \n" << endl;
+                    cout << ">>";
+                    cin >> anotherTransaction;
+                    if (anotherTransaction == 1)
+                    {
+                        transaction();
+                    }
+                }
+                break;
+
+            case 2:
+                // Deposit
+                cout << "\n\tPlease enter amount to deposit: ";
+                cin >> amountToDeposit;
+
+                balance += amountToDeposit;
+
+                cout << "\n\tThank you for depositing, new balance is " << balance << ".00" << endl;
+                cout << "\n\tDo you want another transaction?\n\n\tPress 1 to proceed and 2 to exit\n" << endl;
+                cout << ">>";
+                cin >> anotherTransaction;
+                if (anotherTransaction == 1)
+                {
+                    transaction();
+                }
+                break;
+
+            case 3:
+                cout << "\n\tYour bank amount balance is: " << balance << endl;
+                cout << "\n\tDo you want another transaction?\n\n\tPress 1 to proceed and 2 to exit \n" << endl;
+                cout << ">>";
+                cin >> anotherTransaction;
+                if (anotherTransaction == 1)
+                {
+                    transaction();
+                }
+                break;
+        }
+    }
+};
+
+int main()
+{
+    AMT Obj1;
+
+    Obj1.transaction();
+
+    return 0;
+}
