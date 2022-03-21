@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr;
+    int size=0;
+    int iCount=0;
+    int isum=0;
+
+    
+    printf("Enter the Size of Array :");
+    scanf("%d",&size);
+
+    ptr = (int*)malloc(size);
+    ///printf(sizeof(ptr));
+
+    if(ptr == NULL)
+    {
+        printf("Memory not allocated.\n");
+        exit(0);
+    }
+    else
+    {
+        printf("Memory Successfully Allocated using malloc.\n");
+
+        for(iCount=0;iCount<size;iCount++)
+        {
+            ptr[iCount] =iCount+1;
+
+            isum= isum+ptr[iCount];
+        }
+        printf("The elements of the array are :");
+
+        for (iCount=0;iCount<size;iCount++)
+        {
+              printf("%d  ",ptr[iCount]);
+
+        }
+    }
+    printf("\nAddition is :%d\n",isum);
+
+    free(ptr);
+
+    return 0;
+}
