@@ -1,0 +1,82 @@
+using namespace std;
+
+#include<iostream>
+
+class Base
+{
+    public:
+        int i,j;					//Characteristics
+        Base()						//Default Constructor
+        {
+            i = 11;
+            j = 0;
+        }
+
+        virtual void fun()				//1000				Defination
+        {
+            cout<<"Base fun\n";
+        }
+
+        void gun()					//2000				Defination
+        {
+            cout<<"Base gun\n";
+        }
+
+        virtual void sun()				//3000				Defination
+        {
+           cout<<"Base sun\n";
+        }
+
+        void mun()					//4000				Defination
+        {
+           cout<<"Base sun\n";
+        }
+};
+
+class Derived : public Base					//Single level inheritance
+{
+    public:
+    int i;							//Characteristics
+    Derived()						//Default Constructor
+    {
+        i = 21;
+    }
+
+    void fun()                  			//5000			Overriding
+    {
+        cout<<"Derived fun\n";
+    }
+
+    void gun()              				//6000			//Redefination
+    {
+        cout<<"Derived gun\n";
+    }
+
+    virtual void run()					//7000			//Defination
+    {
+        cout<<"Derived run\n";
+    }
+
+    void mun()						//8000			//Redefination
+    {
+      cout<<"Derived mun\n";
+    }
+};
+
+int main()
+{
+    Base *bp = NULL;
+    Derived dobj;
+    Base bobj;          
+    cout<<sizeof(Base)<<"\n";				
+    cout<<sizeof(Derived)<<"\n";			
+
+    bp = &dobj;     					                                     // Upcasting
+    bp->fun();      		                                                //DF
+    bp->gun();			                                                   //BG
+    bp->sun();			                                                  //BS
+   
+    bp->mun();			                                                //BM
+    dobj.run();			                                                 //Dr
+    return 0;
+}
