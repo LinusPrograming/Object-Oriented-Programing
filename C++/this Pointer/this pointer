@@ -1,0 +1,64 @@
+#include <iostream>
+
+using namespace std;
+
+class Demo
+{
+public:
+      int i;
+      int j;
+      //int a;
+
+      Demo ()
+      {
+        i=0;
+        this-> j=0;
+        cout<<" Value of this pointer and Address of Default Object is "<<this<<endl;
+       
+      }
+
+      Demo (int i,int j)
+      {
+        this->i=i;
+        this->j=j;
+        cout<<" Value of this pointer and Address of Paramiterized Object is "<<this<<endl;
+        this->fun(11);
+      }
+
+      Demo (Demo&Ref)
+      {
+      
+        this->i=Ref.i;
+        this->j=Ref.j;
+        cout<<" Value of this pointer and Address of Copy Object is "<<this<<endl;
+      }
+
+      void fun(int no)
+      {
+        this->i=no;
+        cout<<"Value of i :-"<<i<<endl;
+        cout<<"Value of i :-"<<this->i<<endl;
+        
+      }
+
+      void gun()
+      {
+        cout<<this<<endl;
+        this->fun(51);
+      }
+};
+
+int main()
+{
+    Demo obj1;
+    Demo obj2(11,21);
+    Demo obj3(obj2);
+    
+
+    obj1.fun(101);
+    obj2.fun(201);
+    obj1.gun();
+
+
+    return 0;
+}
