@@ -1,0 +1,70 @@
+#include <iostream>
+
+using namespace std;
+
+class operators
+{
+    public:
+        int isum;
+        int isub;
+        int imult;
+        int ivalue;
+        int cvalue;
+
+    int Addition(int add1,int add2,int add3)
+    {
+        isum=add1+add2+add3;
+        cout<<"\nAddition is "<<isum<<"\n";
+    }
+    int Substraction(int sub1,int sub2,int sub3)
+    {
+        isub=sub1-sub2-sub3;
+        cout<<"\nSubstraction is "<<isub<<"\n";
+    }
+    int Multiplication(int mult1,int mult2,int mult3)
+    {
+        imult=mult1*mult2*mult3;
+        cout<<"\nMultiplication is "<<imult<<"\n";
+    }
+};
+int main()
+{
+    int num1=0;
+    int num2=0;
+    int num3=0;
+    int choice=0;
+
+    operators Add;
+    operators Sub;
+    operators Multi;
+
+    cout<<"Enter 3 numbers for calculation :";
+    cin>>num1>>num2>>num3;
+
+    cout<<"\n\n\n---------------------------------------------------------------\n\n";
+
+    retry:
+
+    cout<<"Enter the choice \n 1.Addition \n 2.Substraction \n 3.Multiplication\n ";
+    cin>>choice;
+
+    switch(choice)
+    {
+        case 1:
+            Add.Addition(num1,num2,num3);
+            break;
+
+        case 2:
+            Sub.Substraction(num1,num2,num3);
+            break;
+
+        case 3:
+            Multi.Multiplication(num1,num2,num3);
+            break;
+
+        default :
+            cout<<"Wrong operator\nTry Again...";
+            goto retry;
+    }
+    return 0;
+}
