@@ -1,0 +1,28 @@
+#include <iostream>
+#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+    int ino=11;
+    cout<<&ino<<"\n";
+
+    int &i=ino;
+    int *p=&i;
+
+    i++;
+    ino++;
+
+    cout<<ino<<endl;
+
+    cout<<&ino<<endl;
+    
+    cout<<*p<<endl;
+    
+    cout<<&i<<endl;
+    
+    cout<<p<<endl;
+     
+    return 0;
+}
