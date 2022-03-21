@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+class Base
+{
+    public:
+        int i;
+        int j;
+
+        void virtual Fun()
+        {
+            cout<<"From Base Fun"<<endl;
+        }
+        void Gun()
+        {
+            cout<<"\nFrom Base Gun";
+        }
+};
+class Derived:public Base
+{
+    public:
+        int x;
+
+        void Fun()
+        {
+            cout<<"\nFrom derived Fun";
+        }
+        void Gun()
+        {
+            cout<<"\nFrom derived Gun";
+        }
+};
+int main()
+{
+   Base *bp=NULL;       //pointer type
+
+   Derived dobj;
+
+   bp=&dobj;            //pointed type
+
+   cout<<sizeof(bp)<<endl;
+   cout<<sizeof(dobj);
+   //cout<<sizeof(Obj2);
+
+
+    bp->Fun();
+    bp->Gun();
+
+    return 0;
+}
