@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+class StaticFun
+{
+public:
+
+    static int k;
+    StaticFun(int Value)
+    {
+      int ivalue=0;
+
+        for(ivalue = 1;ivalue<=Value ; ivalue++)
+        {
+          k++;
+        }
+
+    }
+    static void PRINT()
+    {
+      cout<<"Value of Static veriable :- "<<k;  
+    }
+    
+};
+
+int StaticFun::k=100;
+int main()
+{
+    int Call=0;
+    StaticFun Obj1(10);
+    StaticFun Obj2(20);
+
+    StaticFun::PRINT();
+    
+    return 0;
+}
